@@ -93,6 +93,8 @@ main{
     display: flex;
     flex-flow: column nowrap;
 
+    color: #333333;
+    text-align: justify;
     gap: 1rem 2rem;
 }
 
@@ -106,6 +108,16 @@ aside{
 
 .profile img{
     max-width: 300px;
+    object-position: center;
+}
+
+.profile p{
+    text-align: justify;
+}
+
+.profile figcaption {
+    font-weight: 300;
+    font-size: small;
 }
 
 

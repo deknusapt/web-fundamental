@@ -28,7 +28,7 @@
         <ul>
           <li><a href="#brief-history">Brief History</a></li>
           <li><a href="#the-principles">The Principles</a></li>
-          <li><a href="#how-it-works">How it Works</a></li>
+          <li><a href="#tcp-udp">TCP vs UDP</a></li>
         </ul>   
       </nav>
     </header>
@@ -41,22 +41,57 @@
         <article id="history" class="card">
           <h2 id="brief-history">Brief History</h2>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente inventore optio omnis, quae qui eligendi neque asperiores dolore nesciunt voluptatum, odio adipisci et? Et itaque autem officiis est veniam ea.
+						<a href="https://en.wikipedia.org/wiki/ARPANET" target="_blank">The ARPANET project</a> was launched in 1969 by the <b>US Department of Defense's Advanced Research Projects Agency (ARPA)</b>. 
+						<i>The goal was to create a network of computers that could communicate with each other across different locations and platforms</i>, and that could withstand a nuclear attack. 
+						The ARPANET was the first network to use packet switching, a technique that breaks data into small units called packets, and sends them over different paths to the destination. 
+						This enabled more efficient and reliable data transmission than the previous circuit switching method, which required a dedicated connection between two points.
+						<br><br>
+						In 1973, two researchers, <b>Vinton Cerf</b> and <b>Robert Kahn</b>, proposed a new protocol that would enable interconnection and interoperability between different networks. 
+						They called it the <b>Transmission Control Protocol (TCP)</b>, and it was designed to provide end-to-end reliability, error recovery, and congestion control. 
+						TCP also introduced the concept of <a href="https://en.wikipedia.org/wiki/IP_address" target="_blank">IP addresses</a>, which are unique identifiers for each host on the network. 
+						TCP was later split into two separate protocols: TCP, which handles the data transmission and reliability aspects, and IP, which handles the routing and addressing aspects. Together, they form the TCP/IP protocol suite, which is the basis of the internet.
           </p>
         </article>
 
         <article id="principles" class="card">
           <h2 id="the-principles">The Principles</h2>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente inventore optio omnis, quae qui eligendi neque asperiores dolore nesciunt voluptatum, odio adipisci et? Et itaque autem officiis est veniam ea.
+						The TCP/IP model is a conceptual framework that describes how the TCP/IP protocol suite operates. It consists of four layers: the application layer, the transport layer, the internet layer, and the network access layer. 
+						Each layer performs specific functions and interacts with the adjacent layers. <b><i>The application layer</i></b> is where the user applications, such as web browsers and email clients, communicate with each other. 
+						<b><i>The transport layer</i></b> is where the <a href="https://www.geeksforgeeks.org/differences-between-tcp-and-udp/" target="_blank">TCP or UDP protocols</a> ensure reliable or fast data transmission, respectively. <b><i>The internet layer</i></b> is where the IP protocol routes the packets across different networks. 
+						And <b><i>the network access layer</i></b> is where the physical and data link protocols, such as Ethernet and Wi-Fi, connect the hosts to the network media.
+						<br><br>
+						TCP/IP specifies how data is exchanged over the internet by providing end-to-end communications that <i>identify how it should be broken into packets, addressed, transmitted, routed and received at the destination.</i> 
+						TCP/IP requires little central management and is designed to make networks reliable with the ability to recover automatically from the failure of any device on the network.
           </p>
         </article>
 
-        <article id="works" class="card">
-          <h2 id="how-it-works">How it Works</h2>
+        <article id="tcpvsudp" class="card">
+          <h2 id="tcp-udp">TCP vs UDP</h2>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente inventore optio omnis, quae qui eligendi neque asperiores dolore nesciunt voluptatum, odio adipisci et? Et itaque autem officiis est veniam ea.
+						UDP is an alternative to TCP, offering different ways to communicate network traffic. While the former ensures reliable transfers, the latter prioritizes efficiency and speed. 
+						Here are six common differences between TCP and UDP:
           </p>
+					<ul>
+						<li>
+							<b>The service type.</b> TCP is a connection-based protocol that requires the communicating devices to connect before transferring the actual data. 
+							In comparison, UDP is a connectionless protocol that transmits information without checking whether the receiver can accept the signal.</li>
+						<li>
+							<b>Sequence.</b> In TCP, packets arrive in a specific order at the receiver. While in UDP, the system sends independent packets without sequence numbers.
+						</li>
+						<li>
+							<b>Data retransmission.</b> TCP will resend any lost or corrupted packets, while UDP won’t.
+						</li>
+						<li>
+							<b>Flow control mechanism.</b> TCP uses this technique to calibrate the data transfer speed and limit the rate when a sender transfers data. UDP doesn’t have a flow control mechanism.
+						</li>
+						<li>
+							<b>Stream types.</b> TCP interprets data as bytes and transmits the IP packet to segment boundaries. In contrast, UDP reads data as messages that contain bundles.
+						</li>
+						<li>
+							<b>Header length.</b> A TCP header ranges from 20-60 bytes, while UDP is eight fixed-length bytes.
+						</li>
+					</ul>
         </article>
       </div>
 
@@ -64,32 +99,25 @@
 			<aside>
 				<article class="profile card">
 					<header>
-						<h2>The Author</h2>
+						<h2>How it Works?</h2>
 							<figure>
 								<img src="assets/images/IP_stack_connections.svg" alt="IP_stack_connections">
-								<figcaption>@deknusapt</figcaption>
+								<figcaption>IP Stack Connections</figcaption>
 							</figure>
+							<p>
+								Conceptual data flow in a simple network topology of two hosts (A and B) connected by a link between their respective routers. 
+								The application on each host executes read and write operations as if the processes were directly connected to each other by some kind of data pipe. 
+								After establishment of this pipe, most details of the communication are hidden from each process, as the underlying principles of communication are implemented in the lower protocol layers. 
+								In analogy, at the transport layer the communication appears as host-to-host, without knowledge of the application data structures and the connecting routers, while at the internetworking layer, individual network boundaries are traversed at each router.
+							</p>
+							<figure>
+								<img src="assets/images/UDP_encapsulation.svg" alt="Encapsulations Stack">
+								<figcaption>Encapsulations Stack</figcaption>
+							</figure>
+							<p>
+								Encapsulation of application data descending through the layers described in <a href="https://datatracker.ietf.org/doc/html/rfc1122">RFC 1122</a>.
+							</p>
 					</header>
-					<section>
-						<table>
-							<tr>
-								<th>Bio</th>
-								<td>A person seeking for knowledge</td>
-							</tr>
-							<tr>
-								<th>Role</th>
-								<td>College Student</td>
-							</tr>
-							<tr>
-								<th>Skills</th>
-								<td>Computer Networking</td>
-							</tr>
-							<tr>
-								<th>Language</th>
-								<td>Bahasa (Native), English</td>
-							</tr>
-						</table>
-					</section>
 				</article>
 			</aside>
 			<!-- End of Aside -->
