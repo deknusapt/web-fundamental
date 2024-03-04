@@ -1,8 +1,150 @@
+*{
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
 body{
     font-family: "Work Sans", sans-serif;
+    background-color: #f1f1f1;
+    padding: 0;
+    margin: 0;
 }
 
-h1, h2, h3{
+h2, h3{
     font-family: "Bitter", serif;
+    color: #333333;
 }
 
+.card {
+    box-shadow: 0 4px 8px 0 rgba(3, 3, 3, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+
+/* Header Section */
+
+header{
+    display: inline;
+}
+
+.jumbotron {
+    font-size: 30px;
+    padding: 20px;
+    background-color: #27374D;
+    text-align: left;
+    color: #f1f1f1;
+
+}
+
+.jumbotron h1{
+    font-family: "Bitter", serif;
+    color: #f1f1f1;
+}
+
+
+/* Navigation Section */
+
+nav{
+    background-color: #526D82;
+    padding: 5px;
+
+    position: sticky;
+    top: 0;
+}
+
+nav ul{
+    padding-inline: 4rem;
+    display: flex;
+    gap: 2rem;
+}
+
+nav li {
+    list-style-type: none;
+    margin-right: 25px;
+}
+
+nav a{
+    font-size: 14px;
+    font-weight: 400;
+    text-decoration: none;
+
+    color: #f1f1f1;
+}
+
+nav a:hover{
+    font-weight: bold;
+}
+
+
+
+/* Main Section */
+
+main{
+    padding: 20px;
+    display: flex;
+
+    gap: 1.5rem;
+}
+
+#content{
+    flex: 5;
+    display: flex;
+    flex-flow: column nowrap;
+
+    gap: 1rem 2rem;
+}
+
+aside{
+    flex: 1;
+}
+
+.profile header{
+    text-align: center;
+}
+
+.profile img{
+    max-width: 300px;
+}
+
+
+/* Footer Section */
+
+footer {
+    padding: 10px;
+    color: #f1f1f1;
+    background-color: #27374D;
+    text-align: center;
+    font-weight: 500;
+}
+
+
+/* Media Queries */
+
+@media screen and (max-width: 1200px) { /* for 1200px screen size */
+    main {
+        flex-flow: column nowrap;
+    }
+    main aside {
+        align-self: center;
+    }
+}
+
+@media screen and (max-width: 1000px) { /* for 1000px screen size */
+    #content,
+    aside {
+      width: 100%;
+      padding: 0;
+    }
+}
+
+@media screen and (max-width: 768px) { /* for 768px screen size */
+    nav ul {
+        justify-content: center;
+    }
+    main aside {
+        align-self: stretch;
+    }
+}
+  
